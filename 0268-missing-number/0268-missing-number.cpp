@@ -1,16 +1,11 @@
 class Solution {
 public:
     int missingNumber(vector<int>& nums) {
-        unordered_map<int, int>mp;
-        int max=nums.size(), min=0;
+        int n=nums.size(),actual=0;
+        int expected=n*(n+1)/2;
         for(int i:nums){
-            mp[i]++;
+            actual+=i;
         }
-        for(int i=min;i<=max;i++){
-            if(mp[i]==0){
-                return i;
-            }
-        }
-        return -1;
+        return expected-actual;
     }
 };
