@@ -6,7 +6,8 @@ public:
         arr1.push_back(nums[0]);
         arr2.push_back(nums[1]);
         for(int i=2;i<nums.size();i++){
-            if(arr1.back()<arr2.back()){
+            int n=arr1.size(), m=arr2.size();
+            if(arr1[n-1]<arr2[m-1]){
                 arr2.push_back(nums[i]);
             }
             else{
