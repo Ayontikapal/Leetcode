@@ -4,30 +4,28 @@ private:
     stack<int> minS;
 
 public:
-
-    MinStack() {
+    MinStack() {   
     }
-
-    void push(int val) {
-        s.push(val);
-
-        if (minS.empty()) {
-            minS.push(val);
+    
+    void push(int value) {
+        s.push(value);
+        if(minS.empty()){
+            minS.push(value);
         }
-        else {
-            minS.push(min(val, minS.top()));
-        }
+       else{
+        minS.push(min(value,minS.top()));
+       } 
     }
-
+    
     void pop() {
         s.pop();
         minS.pop();
     }
-
+    
     int top() {
         return s.top();
     }
-
+    
     int getMin() {
         return minS.top();
     }
